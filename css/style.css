@@ -446,6 +446,7 @@ section p {
     gap: 28px;
 }
 .step-title .step-num {
+    min-width: 32px;
     width: 32px;
     height: 32px;
     border-radius: 100%;
