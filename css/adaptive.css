@@ -259,23 +259,8 @@
         align-items: center;
     }
     .footer-links {
-        max-width: fit-content;
-        width: 90%;
-        display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 14px;
-    }
-    .footer-link {
-        font-size: 0.75rem;
-        font-weight: 500;
-        line-height: 100%;
-        text-decoration: underline;
-        color: rgba(0, 0, 0, 1);
-    }
-    .footer-link:hover {
-        color: rgba(0, 113, 188, 1);
+        gap: 32px;
     }
     .copyright {
         font-size: 0.75rem;
@@ -289,6 +274,41 @@
         background-position: right 0 top 0;
     }
 }
+
+@media screen and (max-width: 500px) {
+    .platforms {
+        margin: 0 auto 64px;
+        row-gap: 32px;
+    }
+    .platform-container {
+        gap: 20px;
+    }
+    .platform-card {
+        padding: 28px 20px;
+    }
+    .platform-card h3 {
+        font-size: 1.5rem;
+    }
+    .platform-card li {
+        font-size: 1rem;
+    }
+    .platform-card li img {
+        width: 24px;
+    }
+    
+    .platform-talents {
+        justify-content: center;
+        gap: 24px;
+    }
+    .platform-talents img {
+        width: 112px;
+    }
+    .platform-talents p {
+        font-size: 0.75rem;
+        max-width: 78px;
+    }
+}
+
 @media screen and (max-width: 420px) {
     .adaptability-cards + .button {
         padding: 20px 74px;
@@ -299,13 +319,5 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-    }
-    .copyright {
-        display: none;
-    }
-    .copyright-mobile {
-        display: inline;
-        text-align: center;
-        font-size: 0.75rem;
     }
 }

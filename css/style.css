@@ -79,7 +79,7 @@ header {
     margin: 0 auto;
 }
 .accent {
-    color: rgba(181, 221, 255, 1);
+    color: rgba(0, 113, 188, 1);
 }
 .accent-2 {
     color: rgba(61, 82, 213, 1);
@@ -545,35 +545,80 @@ footer {
     border-top: 1px solid rgba(181, 221, 255, 1);
 }
 .footer-container {
+    min-height: 164px;
     max-width: 1200px;
     width: 90%;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .footer-links {
-    max-width: 330px;
-    width: 90%;
+    max-width: 890px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.footer-link {
+.links-column {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.links-column h2 {
+    min-height: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(0, 113, 188, 1);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+.links-column img {
+    transition: transform 0.3s ease;
+}
+.links-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.links-column ul.collapsed {
+    max-height: 0;
+    opacity: 0;
+}
+.links-column ul.expanded {
+    max-height: 500px;
+    opacity: 1;
+}
+.links-column.active h2 img {
+    transform: rotate(180deg);
+}
+.links-column li a {
     font-size: 1rem;
     font-weight: 500;
     line-height: 100%;
     text-decoration: underline;
     color: rgba(0, 0, 0, 1);
 }
-.footer-link:hover {
+.links-column li a:hover {
     color: rgba(0, 113, 188, 1);
+    text-decoration: none;
 }
+.links-column ul li::marker {
+    content: "";
+}
+
 .copyright {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 0.875rem;
+    font-weight: 300;
     line-height: 100%;
+    color: rgba(153, 153, 153, 1);
 }
 
 .steps-section {
@@ -581,6 +626,206 @@ footer {
     background-repeat: no-repeat;
     background-position: right 0 top 0;
 }
-.copyright-mobile {
-    display: none;
+
+.footer-bottom {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(181, 221, 255, 1);
+    margin-top: 27px;
+}
+
+.platforms {
+    margin: 0 auto 162px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 54px;
+    column-gap: 32px;
+}
+.platform-container {
+    max-width: 584px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+}
+.platform-card {
+    width: 100%;
+    border-radius: 9px;
+    background-color: rgba(240, 248, 255, 1);
+    padding: 40px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    transition: all 0.3s ease;
+}
+.platform-card:hover {
+    background-color: rgba(181, 221, 255, 1);
+}
+.platform-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 100%;
+}
+.platform-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.platform-card li::marker {
+    content: "";
+}
+.platform-card li {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 7px;
+}
+.platform-card li img {
+    width: 28px;
+}
+
+.platform-talents {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+.platform-talents img {
+    width: 168px;
+}
+.platform-talents p {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.header-banner {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    height: fit-content;
+    padding: 75px 20px 75px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header-banner img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.header-banner-container {
+    max-width: 584px;
+    height: 389px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 24px;
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(30px);
+}
+.header-banner-container h1 {
+    font-size: 3.25rem;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: uppercase;
+    max-width: 536px;
+}
+.header-banner-container p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 125%;
+}
+
+.hr-header-cards {
+    margin-top: 52px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.hr-header-cards .header-card {
+    max-width: 378px;
+    width: 100%;
+    height: 190px;
+    border-radius: 9px;
+}
+.hr-header-cards .header-card-container {
+    padding: 40px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px; 
+}
+.hr-header-cards .header-card-container h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 100%;
+}
+.hr-header-cards .header-card-container p {
+    font-size: 1.125rem;
+    color: rgba(0, 0, 0, 1);
+}
+
+.hr-header-cards + .button {
+    margin-top: 28px;
+}
+
+.easy-steps {
+    margin: 72px auto 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.easy-step {
+    max-width: 276px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.easy-step .step-number {
+    width: 28px;
+    height: 28px;
+}
+.easy-step .divider {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 113, 188, 1);
+}
+.easy-step p {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 100%;
+    color: rgba(0, 0, 0, 1);
+    margin: 0;
 }
